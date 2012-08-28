@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="AutomatedClosure">
+	<property file="build.properties"/>
+	
+	<target name="DEV. Write Dependacies File">
+		<exec executable="${closure_deps_writer}">
+			<arg value="--root_with_prefix=${basedir}/${build_dir} ${closure_step_out}${build_dir}"/>
+			<arg value="--output_file=${build_dir}/${main_js_build_dir}/${main_js_deps_file}"/>
+		</exec>
+	</target>
+	
+	<target name="PRODUCTION. Compile JS">
+		<exec executable="${closure_builder}">
+			<arg value="--root=${closure_library}"/>
+			<arg value="--root=${closure_third_party}"/>
+			<arg value="--root=${build_dir}/${main_js_build_dir}"/>
+			<arg value="--namespace=${main_js_namespace}.${main_js_mainfunction}"/>
+			<arg value="--output_mode=compiled"/>
+			<arg value="--compiler_jar=${closure_compiler}"/>
+			<arg value="--compiler_flags=--compilation_level=ADVANCED_OPTIMIZATIONS"/>
+			<arg value="--output_file=${build_dir}/${main_js_target_dir}/${release_js_file}"/>
+		</exec>
+	</target>
+	
+	<target name="MISC. Check Dependancies">
+		<exec executable="${closure_builder}">
+			<arg value="--root=${closure_library}"/>
+			<arg value="--root=${closure_third_party}"/>
+			<arg value="--root=${build_dir}/${main_js_build_dir}"/>
+			<arg value="--namespace=${main_js_namespace}.${main_js_mainfunction}"/>
+		</exec>
+	</target>
+	
+</project>

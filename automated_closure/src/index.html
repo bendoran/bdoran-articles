@@ -1,0 +1,25 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Closure Test</title>
+<!-- DEBUG 
+	<script type="text/javascript" src="../lib/closure/goog/base.js"></script>
+	<script type="text/javascript" src="js_uncompiled/deps.js"></script>
+	<script type="text/javascript" src="js_uncompiled/init.js"></script>
+-->
+
+<!-- PRODUCTION
+--> 
+<script type="text/javascript" src="js/site.js"></script>
+
+</head>
+
+<body>
+	<div id="main"></div>
+	
+	<script type="text/javascript">
+		automatedclosure.init( 'Test', document.getElementById('main') );
+	</script>
+</body>
+</html>
