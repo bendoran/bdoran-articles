@@ -1,0 +1,32 @@
+<html>
+	<head>
+		<style type="text/css">
+			.image{
+				width: 320px;
+				height: 214px;
+				display: block;
+				background-image: url("kinkakuji.jpg");
+				background-size: 100% 100%;
+			}
+			
+			@media only screen and (min--moz-device-pixel-ratio: 1.5 ), 
+			only screen and (-webkit-min-device-pixel-ratio: 1.5 ), 
+			only screen and (min-device-pixel-ratio: 1.5 ){
+				.image{
+					background-image: url("kinkakuji@1.5x.jpg");
+				}
+			}
+			
+			@media only screen and (min--moz-device-pixel-ratio: 2 ), 
+			only screen and (-webkit-min-device-pixel-ratio: 2 ), 
+			only screen and (min-device-pixel-ratio:2 ){
+				.image{
+					background-image: url("kinkakuji@2x.jpg");
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<div class="image"></div>
+	</body>
+</html>

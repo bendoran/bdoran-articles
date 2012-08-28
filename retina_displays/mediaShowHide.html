@@ -1,0 +1,36 @@
+<html>
+	<head>
+		<style type="text/css">
+			.image_1_5x, .image_2x{
+				display: none;
+			}
+			
+			@media only screen and (min--moz-device-pixel-ratio: 1.5 ), 
+			only screen and (-webkit-min-device-pixel-ratio: 1.5 ), 
+			only screen and (min-device-pixel-ratio: 1.5 ){
+				.image_1x, .image_2x{
+					display: none;
+				}
+				.image_1.5x{
+					display: block;
+				}
+			}
+			
+			@media only screen and (min--moz-device-pixel-ratio: 2 ), 
+			only screen and (-webkit-min-device-pixel-ratio: 2 ), 
+			only screen and (min-device-pixel-ratio:2 ){
+				.image_1x, .image_1_5x{
+					display: none;
+				}
+				.image_2x{
+					display: block;
+				}
+			}
+		</style>
+	</head>
+	<body>
+		<img src="kinkakuji.jpg" width="320px" class="image_1x"/>
+		<img src="kinkakuji@1.5x.jpg" width="320px" class="image_1_5x"/>
+		<img src="kinkakuji@2x.jpg" width="320px" class="image_2x"/>
+	</body>
+</html>
